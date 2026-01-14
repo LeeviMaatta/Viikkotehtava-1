@@ -127,7 +127,7 @@ fun SortByDueDateButton(tasks: MutableList<Task>)
         tasks.clear()
         tasks.addAll(sorted)
     }) {
-        Text("Järjestä päivämäärän mukaan")
+        Text("Järjestä deadlinen mukaan")
     }
 }
 
