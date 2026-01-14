@@ -41,10 +41,11 @@ class MainActivity : ComponentActivity() {
                     mutableStateListOf(
                         Task(1, "Osta maitoa", "Muista laktoositon", 1, "15-2-2026", false),
                         Task(2, "Tee viikkotehtävä", "Viikko 1", 2, "21-1-2026", false),
-                        Task(3, "Lenkille", "5 km", 3, "15-1-2026", true)
+                        Task(3, "Lenkille", "5 km", 3, "15-1-2026", true),
+                        Task(4, "Osta mehua", "Omehamehu", 1, "15-2-2026", false),
+                        Task(5, "Osta mehua", "Appelsiinimehu", 1, "16-2-2026", false),
                     )
                 }
-
                 Scaffold(modifier = Modifier.fillMaxSize()) {
                     HomeScreen(tasks)
                 }
@@ -92,12 +93,19 @@ fun HomeScreen(tasks: MutableList<Task>)
                     }
                 )
 
-                Text(
-                    text = task.title,
+                Column(
                     modifier = Modifier
                         .weight(1f)
                         .padding(start = 8.dp)
-                )
+                ) {
+                    Text(
+                        text = task.title
+                    )
+                    Text(
+                        text = task.description
+                    )
+                }
+
             }
         }
 
